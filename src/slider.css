@@ -1,0 +1,64 @@
+/* 外側のコンテナ（ラベルとスイッチを並べる用） */
+.switch-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: sans-serif;
+  }
+  
+  /* スイッチ本体の枠組み */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+  }
+  
+  /* 元のチェックボックスは完全に隠す */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* スライダーの背景（レール部分） */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc; /* オフの時の色 */
+    transition: .4s;
+    border-radius: 34px;
+  }
+  
+  /* ツマミ（丸い部分） */
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+  
+  /* チェックが入った（オン）時の背景色 */
+  input:checked + .slider {
+    background-color: #2196F3; /* 清潔感のある青 */
+  }
+  
+  /* チェックが入った時のツマミの移動 */
+  input:checked + .slider:before {
+    transform: translateX(24px); /* 右側へスライド */
+  }
+  
+  /* フォーカス時の輪郭（アクセシビリティ対応） */
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
