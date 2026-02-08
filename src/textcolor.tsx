@@ -9,4 +9,5 @@ export default function getContrastColor(hexColor: string): 'black' | 'white' {
 
     // 3. しきい値（128）を基準に白か黒を返す
     return luminance > 128 ? 'black' : 'white';
+
 };
