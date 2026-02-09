@@ -13,7 +13,7 @@ interface Word {
 export default function Game() {
     const wordList: Word[] = Word_Data;
     const [currentWord, setCurrentWord] = useState<Word | null>(null);
-    const [timerCount, setTimerCount] = useState(3);
+    const [timerCount, setTimerCount] = useState(60);
     const [inputCorrect, setInputCorrect] = useState(false);
     const [romajiInput, setRomajiInput] = useState(""); // ローマ字入力バッファ
     const [convertedHiragana, setConvertedHiragana] = useState(""); // 変換済みのひらがな
@@ -134,7 +134,7 @@ export default function Game() {
         setRomajiInput("");
         setConvertedHiragana("");
         convertedHiraganaRef.current = "";
-        setTimerCount(3);
+        setTimerCount(60);
         setScore(0);
         setGameOver(false);
     }, [reset]);
